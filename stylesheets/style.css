@@ -1,0 +1,1553 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../images/background.jpg) center/cover no-repeat fixed;
+  overflow-x: hidden;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Orbitron";
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: rgba(240, 44, 197, 0.9);
+  font-family: "Orbitron";
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff4aa1,
+    #6b50ff,
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6b50ff,
+    #ff4aa1,
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.5);
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links li::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff4aa1;
+  left: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #6b50ff;
+  right: -1.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links li:hover::before,
+.nav-links li:hover::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.wrapper {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 20px auto;
+  padding: 20px;
+}
+
+/* Index.php styling */
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 2rem;
+  padding: 30px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.post-header::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff4aa1,
+    #6b50ff,
+    #ff4aa1,
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(255, 74, 161, 0.5);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 74, 161, 0.5);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.user-name a {
+  font-family: "Orbitron";
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.5);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.user-name-wrapper i {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  font-family: "Orbitron";
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.5);
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+.like-count {
+  font-weight: bold;
+}
+
+.like-button {
+  color: red;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.like-button:hover {
+  transform: scale(1.2);
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: red !important;
+}
+
+.blog-title {
+  font-family: "Orbitron";
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 30px 0 20px 0;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2rem;
+  word-wrap: break-word;
+}
+
+.blog-content p {
+  font-family: "Roboto";
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.6);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.page-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.page-buttons a {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: "Roboto";
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.page-buttons a:hover {
+  transform: scale(1.1);
+}
+
+.page-buttons .active {
+  color: #ff4aa1;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.page-buttons .next-button {
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  font-style: italic;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.read-more-link {
+  font-family: "Orbitron";
+  font-size: 0.8rem;
+  color: #ff4aa1;
+  text-decoration: none;
+}
+
+.read-more-link:hover {
+  color: #6b50ff;
+}
+
+/* Slut på index.php styling */
+
+footer {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section h3 {
+  font-family: "Orbitron";
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-section p,
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff4aa1;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6b50ff;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.8rem;
+  font-family: "Orbitron";
+}
+
+/* Profile.php styling */
+.profile-card {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 2rem;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+#delete-button {
+  align-self: self-end;
+  padding: 5px;
+  border: solid 1px #f5390f;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  color: #f5390f;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.delete-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.delete-overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.delete-popup {
+  margin: 25vh auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgb(210, 63, 134);
+  background: linear-gradient(
+    180deg,
+    rgba(210, 63, 134, 1) 0%,
+    rgba(107, 80, 255, 1) 100%
+  );
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.delete-popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  z-index: 1;
+}
+
+.delete-content {
+  min-height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.delete-content div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#no-delete,
+#yes-delete {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+#no-delete {
+  border: solid 2px #00ff2a;
+  color: #00ff2a;
+}
+#no-delete a {
+  text-decoration: none;
+  color: #00ff2a;
+}
+
+#yes-delete {
+  border: solid 2px #ec0000;
+  color: #ec0000;
+}
+
+.profile-user-pic {
+  margin-top: 1rem;
+  position: relative;
+  max-width: 300px;
+  min-width: 150px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.profile-user-pic::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(
+    162deg,
+    rgba(249, 74, 165, 1) 0%,
+    rgba(195, 42, 255, 1) 35%,
+    rgba(31, 81, 255, 1) 100%
+  );
+  z-index: -1;
+}
+
+.profile-user-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile-user-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.profile-user-info h1 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Orbitron";
+  background: linear-gradient(
+    200deg,
+    rgba(249, 74, 165, 1) 0%,
+    rgba(195, 42, 255, 1) 35%,
+    rgb(7, 58, 240) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-role-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Orbitron";
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.profile-role-container i {
+  font-size: 2.25rem;
+}
+
+.profile-stats {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  font-family: "Roboto";
+}
+
+.profile-posts {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 2rem;
+  max-height: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Orbitron";
+  color: rgba(218, 18, 174, 0.9);
+}
+
+.profile-posts > h2::after {
+  margin: 0.2rem 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #6b50ff 10%,
+    #ff4aa1 90%,
+    transparent 100%
+  );
+  display: block;
+}
+
+.profile-posts ul {
+  overflow: auto;
+}
+
+.profile-posts li {
+  list-style-type: none;
+  padding: 0.25rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.profile-posts a {
+  text-decoration: none;
+  font-family: "Roboto";
+  background: linear-gradient(
+    267deg,
+    rgba(249, 74, 165, 1) 0%,
+    rgba(195, 42, 255, 1) 50%,
+    rgba(9, 0, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slut på Profile.php styling */
+
+.new-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.new-post-title {
+  color: white;
+  height: 4rem;
+  background: none;
+  border: 1px solid #ff4aa1;
+  padding-left: 0.5rem;
+  font-family: "Orbitron";
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: inherit;
+}
+.new-post-content {
+  font-family: "Roboto";
+  padding: 0.5rem;
+  resize: none;
+  height: 40vh;
+  font-size: 1.5rem;
+  color: white;
+  background: inherit;
+  border: 1px solid #ff4aa1;
+}
+
+.create-post-btn {
+  align-self: flex-end;
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ff4aa1;
+  font-family: "Orbitron";
+  background: #ff4aa1;
+  font-weight: bold;
+}
+
+.create-post-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+.new-post-error {
+  color: red;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* ALL LOGIN.PHP OCH REGISTER.PHP STYLING */
+
+.login-wrapper,
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-container,
+.register-container {
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-container h1,
+.register-container h1 {
+  font-family: "Orbitron";
+  padding-bottom: 0.7rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.login-container label,
+.register-container label {
+  font-family: "Orbitron";
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.login-container input,
+.register-container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #ff4aa1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.login-container input::placeholder,
+.register-container input::placeholder {
+  color: #fff;
+  font-family: "Orbitron";
+  letter-spacing: 1px;
+}
+
+.login-button-wrapper,
+.register-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.login-button-wrapper button,
+.register-button-wrapper button {
+  width: 80%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ff4aa1;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  color: #fff;
+  font-family: "Orbitron";
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button-wrapper button::before,
+.register-button-wrapper button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.login-button-wrapper button:hover::before,
+.register-button-wrapper button:hover::before {
+  left: 100%;
+}
+
+.login-button-wrapper button:hover,
+.register-button-wrapper button:hover {
+  background: linear-gradient(45deg, #6b50ff, #ff4aa1);
+  transform: scale(1.05);
+}
+
+.login-button-wrapper button:active,
+.register-button-wrapper button:active {
+  transform: scale(0.95);
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+}
+
+.login-container p,
+.register-container p {
+  font-family: "Orbitron";
+  font-size: 0.8rem;
+  margin-bottom: 0.6rem;
+  color: #fff;
+  letter-spacing: 0.8px;
+}
+
+.login-container a,
+.register-container a {
+  font-family: "Orbitron";
+  font-weight: 900;
+  color: #ff4aa1;
+  text-decoration: none;
+}
+
+.login-container a:hover,
+.register-container a:hover {
+  color: #6b50ff;
+}
+
+/* SLUT PÅ ALL LOGIN.PHP OCH REGISTER.PHP STYLING */
+
+/*POST .PHP STYLING OCH KOMMENTARER*/
+.post-content {
+  font-size: 1.5rem;
+  font-family: "Roboto";
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.6);
+  word-wrap: break-word;
+}
+.comment-content {
+  padding-top: 0.5rem;
+  font-family: "Roboto";
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(255, 74, 161, 0.6);
+  word-wrap: break-word;
+}
+.comment-h2 {
+  text-align: center;
+  position: relative;
+  font-family: "Orbitron";
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.comment-h2::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff4aa1,
+    #6b50ff,
+    #ff4aa1,
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(255, 74, 161, 0.5);
+}
+
+.no-comments {
+  text-align: center;
+  font-family: "Orbitron";
+  font-size: 1.5rem;
+  color: white;
+}
+
+.comment-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-input {
+  font-family: "Roboto";
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  resize: none;
+  font-size: 1.2rem;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.add-comment {
+  font-size: 1.5rem;
+  font-family: "Orbitron";
+  padding: 0.5rem;
+  background: rgba(195, 42, 255, 1);
+  background-clip: text;
+  border-radius: 0.5rem;
+  border-color: rgba(195, 42, 255, 1);
+  -webkit-text-fill-color: transparent;
+}
+.add-comment:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+.new-comment-error {
+  font-family: "Orbitron";
+  color: red;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.comment-login {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.comment-login-text {
+  font-size: 1.1rem;
+  font-family: "Orbitron";
+}
+.comment-login-btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: "Orbitron";
+  padding: 0.5rem;
+  background: rgba(195, 42, 255, 1);
+  background-clip: text;
+  border-radius: 0.5rem;
+  border-color: rgba(195, 42, 255, 1);
+  -webkit-text-fill-color: transparent;
+}
+.comment-login-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.delete-comment-button {
+  padding: 5px;
+  border: solid 2px #ce03f7;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ce03f7;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.delete-comment-button:hover {
+  transform: scale(1.1);
+}
+
+.like-button-post {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: red;
+  font: inherit;
+  outline: inherit;
+  transition: ease-in-out 0.2s;
+}
+
+.like-button-post:hover {
+  transform: scale(1.2);
+}
+
+.post-user-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.post-user-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.post-user-name-wrapper i {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+.post-error-msg {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.comment-like-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+.comment-like-section i {
+  color: #ff0000;
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.post-actions button {
+  padding: 5px;
+  border: solid 2px #ce03f7;
+  border-radius: 5px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ce03f7;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.post-actions button:hover {
+  transform: scale(1.1);
+}
+/*SLUT POST .PHP STYLING OCH KOMMENTARER*/
+
+/* ALL ADMINPAGE.PHP STYLING */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.admin-table a:hover {
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inline-form {
+  display: inline;
+}
+
+.admin-page-heading {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-page-heading h1 {
+  font-family: "Orbitron";
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin-page-heading i {
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #ff4aa1, #6b50ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-table th {
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  font-family: "Orbitron";
+}
+
+.admin-table td {
+  background: rgba(15, 23, 42, 0.6);
+  color: #fff;
+  font-family: "Roboto";
+}
+
+.admin-table input[type="submit"] {
+  background: #ff4aa1;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: "Orbitron";
+  margin-right: 5px;
+}
+
+.admin-table input[type="submit"]:hover {
+  background: #6b50ff;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.3);
+  color: white;
+  font-family: "Orbitron";
+  font-size: 1.2rem;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 255, 0, 0.3);
+  color: white;
+  font-family: "Orbitron";
+  font-size: 1.2rem;
+}
+
+/* SLUT PÅ ALL ADMINPAGE.PHP STYLING */
+
+/* START PÅ ALLA MEDIA QUERIES */
+/* OBS! LÄGG INTE TILL NÅGOT UNDER DESSA RADER */
+
+/* Allt mellan 992px till 1200px) */
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .footer-content {
+    padding: 0 1rem;
+  }
+
+  .profile-card {
+    gap: 2rem;
+  }
+}
+
+/* Allt mellan 768px till 992px) */
+@media screen and (max-width: 992px) {
+  .nav-links {
+    gap: 2rem;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-user-info {
+    align-items: center;
+  }
+
+  .profile-user-pic {
+    max-width: 200px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 1rem;
+  }
+
+  .admin-table {
+    font-size: 0.9rem;
+  }
+
+  .post-content {
+    font-size: 1.3rem;
+  }
+}
+
+/* Allt mellan 576px till 768px */
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+  }
+
+  .wrapper {
+    margin-top: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.7rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .nav-links li::before,
+  .nav-links li::after {
+    display: none;
+  }
+
+  .glass-card {
+    padding: 20px;
+    margin-top: 1rem;
+  }
+
+  .post-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .like-count {
+    align-self: center;
+  }
+
+  .blog-title {
+    font-size: 1.5rem;
+    margin: 20px 0 15px 0;
+  }
+
+  .blog-content p {
+    font-size: 0.95rem;
+  }
+
+  .page-buttons {
+    flex-wrap: wrap;
+  }
+
+  .page-buttons a {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  .login-container,
+  .register-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .delete-popup {
+    width: 80%;
+    padding: 15px;
+  }
+}
+
+/* Allt under 576px till 400px */
+@media screen and (max-width: 576px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .post-header::after {
+    width: 100%;
+  }
+
+  .user-name a {
+    font-size: 1rem;
+  }
+
+  .blog-title {
+    font-size: 1.3rem;
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+  }
+
+  .comment-h2 {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .comment-input {
+    font-size: 1rem;
+  }
+
+  .add-comment,
+  .comment-login-btn {
+    font-size: 1.2rem;
+  }
+
+  .admin-page-heading h1,
+  .admin-page-heading i {
+    font-size: 1.5rem;
+  }
+
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+    font-size: 0.8rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 5px;
+  }
+
+  .profile-user-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .profile-role-container {
+    font-size: 1rem;
+  }
+
+  .profile-role-container i {
+    font-size: 1.8rem;
+  }
+
+  .profile-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .profile-posts li {
+    font-size: 1rem;
+  }
+
+  .new-post-title {
+    font-size: 1.4rem;
+    height: 3.5rem;
+  }
+
+  .new-post-content {
+    font-size: 1.2rem;
+  }
+
+  .delete-popup {
+    width: 95%;
+  }
+}
+
+/* Allt under 400px */
+@media screen and (max-width: 400px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  .glass-card {
+    padding: 15px 10px;
+  }
+
+  .blog-title {
+    font-size: 1.1rem;
+  }
+
+  .blog-content p {
+    font-size: 0.85rem;
+  }
+
+  .read-more-link {
+    font-size: 0.7rem;
+  }
+
+  .footer-section h3 {
+    font-size: 0.9rem;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.8rem;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+  }
+
+  .admin-table input[type="submit"] {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  .login-button-wrapper button,
+  .register-button-wrapper button {
+    font-size: 1rem;
+  }
+}
+
+.change-picture-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.change-picture-upload {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: "Orbitron";
+  padding: 0.5rem;
+  background: rgba(195, 42, 255, 1);
+  background-clip: text;
+  border-radius: 0.5rem;
+  border-color: rgba(195, 42, 255, 1);
+  -webkit-text-fill-color: transparent;
+}
+.change-picture-upload:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.change-picture-cancel {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: "Orbitron";
+  padding: 0.5rem;
+  background: red;
+  background-clip: text;
+  border-radius: 0.5rem;
+  border-color: red;
+  -webkit-text-fill-color: transparent;
+}
+.change-picture-cancel:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.change-picture-file {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.image-error-msg {
+  font-family: "Orbitron";
+  color: red;
+}
+.change-picture-btn button {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-family: "Orbitron";
+  padding: 0.2rem;
+  background: rgba(195, 42, 255, 1);
+  background-clip: text;
+  border-radius: 0.5rem;
+  border-color: rgba(195, 42, 255, 1);
+  -webkit-text-fill-color: transparent;
+}
+.change-picture-btn button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.profile-user-pic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
