@@ -1,6 +1,6 @@
 # SpaceBackenders
 
-**SpaceBackenders** is a scholastic project developed as part of a PHP course examination. The objective was to create a blog platform implementing full CRUD (Create, Read, Update, Delete) functionality using PHP and MySQL.
+**SpaceBackenders** is a school project developed as part of a PHP course examination. The objective was to create a blog platform implementing full CRUD (Create, Read, Update, Delete) functionality using PHP and MySQL.
 
 ## Features
 
